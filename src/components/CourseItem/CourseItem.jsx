@@ -1,22 +1,39 @@
 import React from "react";
 
 const CourseItem = (props) => {
-  console.log(props.title);
+  const cardColor = props.status === "finish" ? "green" : "red";
 
   return (
-    <div>
-      <div className="courseItem">
+    <div
+      className="courseItem"
+      style={{
+        backgroundColor: cardColor,
+        padding: "15px",
+        borderRadius: "12px",
+        color: "white"
+      }}
+    >
+      <div className="courseLeft" style={{ backgroundColor: "transparent" }}>
+        <h2>Title: {props.title}</h2>
+        <p>Duration: {props.duration}</p>
+        <p>Description: {props.description}</p>
+      </div>
 
-        <div className="courseLeft">
-          <h2>Title: {props.title} </h2>
-          <p>Duration: {props.duration}</p>
-          <p>Description: {props.descr}</p>
-        </div>
+      <div className="courseRight" style={{ backgroundColor: "transparent" }}>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRiYZsYi2rorlc8PM-OLUuN-fe-07JgCZmABf_Skmp4RZVaTL2sc6-kXq&s=10"
+          alt={props.title}
+          style={{
+            width: "100px",
+            height: "100px",
+            objectFit: "cover",
+            borderRadius: "50%"
+          }}
+        />
 
-        <div className="courseRight">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRiYZsYi2rorlc8PM-OLUuN-fe-07JgCZmABf_Skmp4RZVaTL2sc6-kXq&s=10" alt="" style={{width: '100px', height: '100px', objectFit: 'cover'}} />
-        </div>
-        
+        <button style={{ width: "100px", height: "30px", cursor: "pointer" }}>
+          подробнее
+        </button>
       </div>
     </div>
   );

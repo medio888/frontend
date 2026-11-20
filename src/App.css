@@ -3,30 +3,68 @@
 }
 
 h1 {
-    color: #fff;
-    background-color: #000
+  color: #fff;
+  background-color: #000;
 }
 
 img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
-.coursesList  {
-    gap: 10px;
-    display: flex;
-    margin: 10px 0;
-    color: #fff;
+.coursesList {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  color: #fff;
 }
 
-.coursesList div {
-    width: 200px;
-    height: 150px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    color: #490909;
-    background-color: #24e606;
+.coursesList > div {
+  width: 200px;
+  min-height: 150px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: #490909;
 }
 
 .courseItem {
-    border-radius: 15px;
+  border-radius: 15px;
+  height: auto !important;
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.header ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.finished {
+  color: green;
+}
+
+.unfinished {
+  color: red;
 }
